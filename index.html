@@ -8,13 +8,20 @@
 	
 	<title>MatchGame</title>
 	<!-- Note: running this exported project from disk may not work exactly like preview, since browsers block some features on the file:// protocol.  Once you've uploaded it to a server, it should work OK. -->
-	
-    <!-- This outlines the canvas with a black border and makes the page background black. -->
-	<style type="text/css">
-		body { background-color: black; color: white; }
-		canvas { -ms-touch-action: none; }
-	</style>
 
+	<style type="text/css">
+		body {
+			background-color: black;
+			color: white;
+			padding: 0;
+			margin: 0;
+			overflow: hidden;
+		}
+		canvas {
+			-ms-touch-action: none;
+		}
+	</style>
+	
 
 </head> 
  
@@ -34,7 +41,7 @@
 	</script>
 
 		<!-- The canvas must be inside a div called c2canvasdiv -->
-		<div id="c2canvasdiv" style="margin: 0 auto; width: 640px; height: 480px;">
+		<div id="c2canvasdiv" style="width: 640px; height: 480px;">
 		
 			<!-- The canvas the project will render to.  If you change its ID, don't forget to change the
 			ID the runtime looks for in the jQuery ready event (above). -->
@@ -51,17 +58,6 @@
 			</canvas>
 			
 		</div>
-
-        <br />
-		
-		<!-- SCIRRA LTD LICENSE AGREEMENT
-			 FREE EDITION USERS ARE NOT ALLOWED TO REMOVE, MODIFY OR HIDE THE FOLLOWING
-			 LINES OF HTML5 CODE FROM THEIR EXPORTED GAMES. REMOVAL, MODIFICATION OR
-			 ATTEMPTS TO HIDE THIS MESSAGE WILL BE IN BREACH OF THE FREE EDITION LICENSE
-		-->
-		<a href="http://www.scirra.com" target="_blank" style="font-family:Arial;color:DodgerBlue;" title="Make games">Made with Construct 2 &mdash; the HTML5 game maker</a>
-		<!-- End of Scirra Ltd. free edition limitation -->
-
 	</div>
 	
 	<!-- Pages load faster with scripts at the bottom -->
@@ -112,9 +108,6 @@
 				{
 					window.c2resizestretchmode = 0;
 					cr_sizeCanvas(window.c2oldcanvaswidth, window.c2oldcanvasheight);
-					
-					// re-center the canvas
-					jQuery("#c2canvasdiv").css("margin", "0 auto");
 				}
 			}
 		});
